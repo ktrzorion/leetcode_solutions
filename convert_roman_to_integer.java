@@ -11,8 +11,13 @@ class Solution{
       //The loop for iterating Roman String.
       for(int i = s.length()-1, i>=0; i--){
         int current = value[symbol.indexOf(s.charAt(i))]
-          if(past <= current) num += current;
-          else (num -= current);
+          
+          // Compare the previous and current value.
+          if(past <= current) 
+            num += current;
+          else 
+            num -= current;
+          // Set past value as current value.
           past = current;
       }
     return num;
